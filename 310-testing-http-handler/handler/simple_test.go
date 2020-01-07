@@ -1,0 +1,30 @@
+package handler
+
+import (
+	"log"
+	"net/http"
+	"net/http/httptest"
+	"testing"
+)
+
+func TestSimpleHandler(t *testing.T) {
+
+	req, err := http.NewRequest("GET", "/", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	w := httptest.NewRecorder()
+
+	// We're injecting recorder to our handler instead
+	// of writer injected by MUX
+	Simple(w, req)
+
+	if w.Code != http.StatusOK {
+		t.Errorf("Invalid code! I want %d but get %d", http.StatusOK, w.Code)
+	}
+
+	if w.Body.String() != "Hello World" {
+		t.Errorf("Invalid greeting")
+	}
+}
