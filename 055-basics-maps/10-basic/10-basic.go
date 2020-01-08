@@ -6,7 +6,7 @@ func main() {
 
 	userFavouriteDrinks := map[string][]string{}
 
-	userFavouriteDrinks["jacek"] = []string{"śliwowica", "beer"}
+	userFavouriteDrinks["jacek"] = []string{"iwowica", "beer"}
 	userFavouriteDrinks["kazik"] = []string{"metanol", "etanol", "water from the lake"}
 	userFavouriteDrinks["john"] = []string{"whiskey"}
 

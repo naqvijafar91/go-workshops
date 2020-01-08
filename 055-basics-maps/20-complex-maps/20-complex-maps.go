@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main() {
-
+	// interface{} is similar to Object in Java
 	parsedResponse := map[string]interface{}{
 		"size_in_kb": 12000,
 		"custom_headers": []string{
-			"X-Booo: your mama",
+			"X-Booo: XYZ",
 			"X-Foo: ",
 		},
 		"html": map[string]interface{}{
