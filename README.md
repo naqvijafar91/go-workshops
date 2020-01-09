@@ -2,6 +2,26 @@
 
 This repository contains files needed for managing Go language workshop - it's some kind of quite complete walk-through of Go language. Feel free to look on the code, there are many comments which could be useful for beginners and semi-intermediate Go developers.
 
+## What will be covered?
+1. Introduction
+2. Variables and Constants
+3. Functions
+4. Packages
+5. Conditional Statements
+6. Arrays
+7. Slice
+8. Variadic Functions
+9. Maps
+10. Strings
+11. Pointers
+12. Structs
+13. Interface
+14. Goroutines, channels
+15. sync.WaitGroup and sync.Mutex
+16. Unit Testing
+17. Object Oriented Programming in Go
+
+
 ## About Go
 
 Who designed Go language?
@@ -134,7 +154,7 @@ cd \$GOPATH/src/github.com/naqvijafar91/go-workshops
 
 - Vim - vim-go
 
-- Visual Studio Code (really great UX)
+- Visual Studio Code (for the workshop)
 
 - LiteIDE
 
@@ -142,38 +162,32 @@ cd \$GOPATH/src/github.com/naqvijafar91/go-workshops
 
 - Atom
 
-### Auto reload
-
-- BRA (Brilliant Ridiculous Assistant) https://github.com/Unknwon/bra - it's good to setup it when you're working on some webservers to auto reload your app when changes in code are made.
 
 ## Github style - project structure
 
 In go, idiomatic way is to organise code in "github style", so part of the path is looking like server address to library. Of course if you want you don't need to do this, but whole ecosystem works that way.
 
-```sh
-
-src/
-
-github.com
-
-naqvijafar91
-
-mysuperproject
-
-ioki.com.pl
-
-mnmel
-
-nmelinium
-
+```
 bin/
-
-superappbinary
-
-pkg/
-
-compiled packages
-
+    hello                          # command executable
+    outyet                         # command executable
+src/
+    [github.com/golang/example/](https://github.com/golang/example/)
+        .git/                      # Git repository metadata
+	hello/
+	    hello.go               # command source
+	outyet/
+	    main.go                # command source
+	    main_test.go           # test source
+	stringutil/
+	    reverse.go             # package source
+	    reverse_test.go        # test source
+    [golang.org/x/image/](https://golang.org/x/image/)
+        .git/                      # Git repository metadata
+	bmp/
+	    reader.go              # package source
+	    writer.go              # package source
+    ... (many more repositories and packages omitted) ...
 ```
 
 Environment variable `$GOPATH` is responsible for path to the root dir of `src`, `bin` and `pkg` directories.
@@ -181,9 +195,9 @@ Environment variable `$GOPATH` is responsible for path to the root dir of `src`,
 ## Packages and Importing
 
 `package` in go is in form of files with directive `package package_name` on top of each file. Package by default is imported as full path to package.
-
+```go
 import "github.com/naqvijafar91/go-workshops/010-basics-importing/sub"
-
+```
 ## Getting and installing external packages
 
 To get external package we need to run go install which will get sources and binaries and put them to `src`/`bin`/`pkg` directories
@@ -193,12 +207,6 @@ To get external package we need to run go install which will get sources and bin
 go install external.package.com/uri/to/package
 
 ```
-
-## `sub` example package
-
-As we can see our `sub` package is in directory `sub` (obvious) and have two files; `sub1.go` and `sub2.go` each of them also have `package sub` directive which tells compiler that they are in one package.
-
-([code for: Basics Importing](https://github.com/naqvijafar91/go-workshops/tree/master/010-basics-importing))
 
 ## Package managers
 
