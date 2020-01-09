@@ -11,7 +11,7 @@ Go doesn’t have inheritance – instead composition, embed­ding and inter­fa
 Inheritance in traditional object-oriented languages offers three features in one. When a `Dog`  inherits from an `Animal`
 
 1.  the  `Dog`  class reuses code from the  `Animal` class,
-2.  a variable  `x`  of type  `Animal`  can refer to either a  `Dog`  or an  `Animal`,
+2.  a variable  `x`  of type  `Animal`  can refer to either a  `Dog`  or an  `Animal`,a
 3.  `x.Eat()`  will choose an  `Eat`  method based on what type of object  `x`  refers to.
 
 In object-oriented lingo, these features are known as  **code reuse**,  **poly­mor­phism**  and  **dynamic dispatch**.
@@ -129,3 +129,4 @@ If the zero value doesn’t suffice, use factory functions named  `NewFoo`  or j
 scanner := bufio.NewScanner(os.Stdin)
 err := errors.New("Houston, we have a problem")
 ```
+****
