@@ -4,22 +4,23 @@ This repository contains files needed for managing Go language workshop - it's s
 
 ## What will be covered?
 1. Introduction
-2. Variables and Constants
-3. Functions
-4. Packages
-5. Conditional Statements
-6. Arrays
-7. Slice
-8. Variadic Functions
-9. Maps
-10. Strings
-11. Pointers
-12. Structs
-13. Interface
-14. Goroutines, channels
-15. sync.WaitGroup and sync.Mutex
-16. Unit Testing
-17. Object Oriented Programming in Go
+2. [Variables and Constants](docs/03-variables-types-constants.md)
+3. [Functions](docs/04-functions-and-packages.md)
+4. [Packages](docs/04-functions-and-packages.md)
+5. [Conditional Statements](docs/05-conditional-and-loops.md)
+6. [Loops](docs/05-conditional-and-loops.md)
+7. [Arrays](docs/06-arrays-slice-variadic-fn.md)
+8. [Slice](docs/06-arrays-slice-variadic-fn.md)
+9. [Variadic Functions](docs/06-arrays-slice-variadic-fn.md)
+10. [Maps](docs/07-maps-and-strings.md)
+11. [Strings](docs/07-maps-and-strings.md)
+12. [Pointers](docs/08-pointers.md)
+13. [Structs](docs/09-structs-and-interface.md)
+14. [Interface](docs/09-structs-and-interface.md)
+15. [Goroutines, channels](docs/10-concurrency.md)
+16. [sync.WaitGroup and sync.Mutex](docs/10-concurrency.md)
+17. [Unit Testing](docs/12-testing.md)
+18. [Object Oriented Programming in Go](docs/11-object-oriented-programming.md)
 
 
 ## About Go
