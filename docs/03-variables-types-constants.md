@@ -24,6 +24,7 @@ fmt.Println("width is", width, "height is", height)
 var  width2, height2  int // Default value is 0
 fmt.Println("width is", width2, "height is", height2)
 
+// Block declaration
 var (
 name3 = "naveen"
 age3 = 29
@@ -82,53 +83,27 @@ In the above program, in line no. 8, **b** has already been declared but **c** i
 
 a is 20 b is 30
 
-
 b is 40 c is 50
 
 changed b is 80 c is 90
-
 ```
 
 Whereas if we run the program below,
 
 ```go
-
-
-
 package main
 
+import "fmt"
 
+func main() {
 
+	a, b := 20, 30 //a and b declared
 
+	fmt.Println("a is", a, "b is", b)
 
-import  "fmt"
-
-
-
-
-
-func  main() {
-
-
-
-a, b := 20, 30  //a and b declared
-
-
-
-fmt.Println("a is", a, "b is", b)
-
-
-
-a, b := 40, 50  //error, no new variables
-
-
+	a, b := 40, 50 //error, no new variables
 
 }
-
-
-
-
-
 ```
 
 [Run in playground](https://play.golang.org/p/EYTtRnlDu3)
@@ -138,32 +113,15 @@ it will throw error `no new variables on left side of :=` This is because both t
 Since Go is strongly typed, variables declared as belonging to one type cannot be assigned a value of another type.
 
 ```go
-
-
-
 package main
 
+func main() {
 
+	age := 29 // age is int
 
-
-
-func  main() {
-
-
-
-age := 29  // age is int
-
-
-
-age = "naveen"  // error since we are trying to assign a string to a variable of type int
-
-
+	age = "naveen" // error since we are trying to assign a string to a variable of type int
 
 }
-
-
-
-
 
 ```
 
@@ -196,81 +154,35 @@ The following are the basic types available in go
 A bool type represents a boolean and is either _true_ or _false_.
 
 ```go
-
-
-
 package main
 
+import "fmt"
 
+func main() {
 
+	a := true
 
+	b := false
 
-import  "fmt"
+	fmt.Println("a:", a, "b:", b)
 
+	c := a && b
 
+	fmt.Println("c:", c)
 
+	d := a || b
 
-
-func  main() {
-
-
-
-a := true
-
-
-
-b := false
-
-
-
-fmt.Println("a:", a, "b:", b)
-
-
-
-c := a && b
-
-
-
-fmt.Println("c:", c)
-
-
-
-d := a || b
-
-
-
-fmt.Println("d:", d)
-
-
+	fmt.Println("d:", d)
 
 }
-
-
-
-
-
 ```
 
 [Run in playground](https://play.golang.org/p/v_W3HQ0MdY)
 
 ```
-
-
-
 a: true b: false
-
-
-
 c: false
-
-
-
 d: true
-
-
-
-
-
 ```
 
 ### Signed integers
@@ -306,43 +218,19 @@ d: true
 **range:** -2147483648 to 2147483647 in 32 bit systems and -9223372036854775808 to 9223372036854775807 in 64 bit systems
 
 ```go
-
-
-
 package main
 
+import "fmt"
 
+func main() {
 
+	var a int = 89
 
+	b := 95
 
-import  "fmt"
-
-
-
-
-
-func  main() {
-
-
-
-var  a  int = 89
-
-
-
-b := 95
-
-
-
-fmt.Println("value of a is", a, "and b is", b)
-
-
+	fmt.Println("value of a is", a, "and b is", b)
 
 }
-
-
-
-
-
 ```
 
 [Run in playground](https://play.golang.org/p/NyDPsjkma3)
@@ -352,63 +240,27 @@ The above program will output `value of a is 89 and b is 95`
 The type of a variable can be printed using **%T** format specifier in `Printf` function. Go has a package [unsafe](https://golang.org/pkg/unsafe/) which has a [Sizeof](https://golang.org/pkg/unsafe/#Sizeof) function which returns in bytes the size of the variable passed to it. _unsafe_ package should be used with care as the code using it might have portability issues.
 
 ```go
-
-
-
 package main
 
-
-
-
-
 import (
+	"fmt"
 
-
-
-"fmt"
-
-
-
-"unsafe"
-
-
-
+	"unsafe"
 )
 
+func main() {
 
+	var a int = 89
 
+	b := 95
 
+	fmt.Println("value of a is", a, "and b is", b)
 
-func  main() {
+	fmt.Printf("type of a is %T, size of a is %d", a, unsafe.Sizeof(a)) //type and size of a
 
-
-
-var  a  int = 89
-
-
-
-b := 95
-
-
-
-fmt.Println("value of a is", a, "and b is", b)
-
-
-
-fmt.Printf("type of a is %T, size of a is %d", a, unsafe.Sizeof(a)) //type and size of a
-
-
-
-fmt.Printf("\ntype of b is %T, size of b is %d", b, unsafe.Sizeof(b)) //type and size of b
-
-
+	fmt.Printf("\ntype of b is %T, size of b is %d", b, unsafe.Sizeof(b)) //type and size of b
 
 }
-
-
-
-
-
 ```
 
 [Run in playground](https://play.golang.org/p/mFsmjVk5oc)
@@ -416,23 +268,9 @@ fmt.Printf("\ntype of b is %T, size of b is %d", b, unsafe.Sizeof(b)) //type and
 The above program will produce the output
 
 ```
-
-
-
 value of a is 89 and b is 95
-
-
-
 type of a is int, size of a is 4
-
-
-
 type of b is int, size of b is 4
-
-
-
-
-
 ```
 
 We can infer from the above output that a and b are of type _int_ and they are _32 bit sized(4 bytes)_. The output will vary if you run the above program on a 64 bit system. In a 64 bit system, a and b occupy 64 bits (8 bytes).
@@ -502,62 +340,27 @@ c := 6 + 7i
 Lets write a small program to understand complex numbers.
 
 ```go
-
-
-
 package main
 
-
-
-
-
 import (
-
-
-
-"fmt"
-
-
-
+	"fmt"
 )
 
+func main() {
 
+	c1 := complex(5, 7)
 
+	c2 := 8 + 27i
 
+	cadd := c1 + c2
 
-func  main() {
+	fmt.Println("sum:", cadd)
 
+	cmul := c1 * c2
 
-
-c1 := complex(5, 7)
-
-
-
-c2 := 8 + 27i
-
-
-
-cadd := c1 + c2
-
-
-
-fmt.Println("sum:", cadd)
-
-
-
-cmul := c1 * c2
-
-
-
-fmt.Println("product:", cmul)
-
-
+	fmt.Println("product:", cmul)
 
 }
-
-
-
-
 
 ```
 
@@ -625,9 +428,7 @@ var  b  string = "I love Go"
 Constants as the name indicate cannot be reassigned again to any other value and hence the below program will not work and it will fail with compilation error **cannot assign to a**.
 
 ```go
-
 package main
-
 
 
 func  main() {
@@ -638,8 +439,6 @@ a = 89  //reassignment not allowed
 
 }
 
-
-
 ```
 
 [Run in playground](https://play.golang.org/p/b2J8_UQobb)
@@ -647,33 +446,19 @@ a = 89  //reassignment not allowed
 The value of a constant should be known at compile time. Hence it cannot be assigned to a value returned by a function call since the function call takes place at run time.
 
 ```go
-
 package main
 
-
-
 import (
+	"fmt"
 
-"fmt"
-
-"math"
-
+	"math"
 )
 
-
-
-func  main() {
-
-fmt.Println("Hello, playground")
-
-var  a = math.Sqrt(4)//allowed
-
-const  b = math.Sqrt(4)//not allowed
-
+func main() {
+	fmt.Println("Hello, playground")
+	var a = math.Sqrt(4) //allowed
+	const b = math.Sqrt(4) //not allowed
 }
-
-
-
 ```
 
 [Run in playground](https://play.golang.org/p/dCON1LzCTw)
@@ -691,11 +476,7 @@ What type does a string constant belong to? The answer is they are **untyped**.
 **A string constant like "Hello World" does not have any type**.
 
 ```go
-
 const  hello = "Hello World"
-
-
-
 ```
 
 In the above case we have assigned "Hello World" to a named constant **hello**. Now does the constant _hello_ have a type? The answer is No. The constant still doesn't have a type.
@@ -705,27 +486,15 @@ In the above case we have assigned "Hello World" to a named constant **hello**. 
 package main
 
 
-
 import (
-
 "fmt"
-
 )
 
-
-
 func  main() {
-
 var  name = "Sam"
-
 fmt.Printf("type %T value %v", name, name)
 
-
-
 }
-
-
-
 ```
 
 The following code creates a typed constant.
@@ -741,28 +510,19 @@ const typedhello string = "Hello World"
 Go is a strongly typed language. Mixing types during assignment is not allowed.
 
 ```go
-
 package main
 
+func main() {
 
+	var defaultName = "Sam" //allowed
 
-func  main() {
+	// Define a new type myString
+	type myString string
 
-var  defaultName = "Sam"  //allowed
+	var customName myString = "Sam" //allowed
 
-// Define a new type myString
-type  myString  string
-
-var  customName myString = "Sam"  //allowed
-
-customName = defaultName //not allowed
-
-
-
+	customName = defaultName //not allowed
 }
-
-
-
 ```
 
 [Run in playground](https://play.golang.org/p/1Q-vudNn_9)
@@ -770,5 +530,3 @@ customName = defaultName //not allowed
 In the above code, we first create a variable _defaultName_ and assign it to the constant _Sam_. **The default type of the constant Sam is string, so after the assignment defaultName is of type String.**
 
 **Hence the assignment customName = defaultName is not allowed and the compiler throws an error _main.go:7:20: cannot use defaultName (type string) as type myString in assignment_**
-
-([code for: Basics Constants](https://github.com/naqvijafar91/go-workshops/tree/master/030-basics-constants))
