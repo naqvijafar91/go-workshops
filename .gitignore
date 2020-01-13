@@ -20,3 +20,4 @@ rethinkdb_data
 /.vscode/tags
 debug
 /115-stdlib-streams/file.txt
+.DS_Store

@@ -225,4 +225,3 @@ after that dep will add vendor dir where all dependencies will be loaded (In go 
 
 For more details please refer to `dep` documentation at https://golang.github.io/dep/docs/daily-dep.html
 
-([code for: Package Management](https://github.com/naqvijafar91/go-workshops/tree/master/011-package-management))
