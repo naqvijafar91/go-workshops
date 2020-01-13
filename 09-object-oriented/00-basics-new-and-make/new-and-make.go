@@ -24,9 +24,9 @@ func main() {
 	a2.Name = "John Doe"
 	fmt.Printf("%+v\n", a2) // pointer
 
-	b := new([]int)
-	fmt.Printf("%+v %d %d\n", b, len(*b), cap(*b))
+	b := new([]int) // pointer to slice
+	fmt.Printf("%+v %d %d\n", b, len(*b), cap(*b)) 
 
-	c := make([]int, 10, 100)
+	c := make([]int, 10, 100) //slice
 	fmt.Printf("%+v\n", c)
 }
