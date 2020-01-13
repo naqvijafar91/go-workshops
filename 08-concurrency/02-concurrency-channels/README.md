@@ -35,5 +35,3 @@ Sends to a buffered channel **block only when the buffer is full**. Receives blo
 - rate limiting with channels
 - selecting proper channel stream
 - pipeline and fan-in/fan-out patterns
-
-Feel free to browse [channels chapter source code](101-concurrency-channels/)
