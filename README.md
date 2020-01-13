@@ -4,14 +4,14 @@ This repository contains files needed for managing Go language workshop - it's s
 
 ## What will be covered?
 1. Introduction
-2. [Variables and Constants](docs/03-variables-types-constants.md)
-3. [Functions](docs/04-functions-and-packages.md)
-4. [Packages](docs/04-functions-and-packages.md)
-5. [Conditional Statements](docs/05-conditional-and-loops.md)
-6. [Loops](docs/05-conditional-and-loops.md)
-7. [Arrays](docs/06-arrays-slice-variadic-fn.md)
-8. [Slice](docs/06-arrays-slice-variadic-fn.md)
-9. [Variadic Functions](docs/06-arrays-slice-variadic-fn.md)
+2. [Variables and Constants](docs/01-variables-types-constants.md)
+3. [Functions](docs/02-functions-and-packages.md)
+4. [Packages](docs/02-functions-and-packages.md)
+5. [Conditional Statements](docs/03-conditional-and-loops.md)
+6. [Loops](docs/03-conditional-and-loops.md)
+7. [Arrays](docs/04-arrays-slice-variadic-fn.md)
+8. [Slice](docs/04-arrays-slice-variadic-fn.md)
+9. [Variadic Functions](docs/04-arrays-slice-variadic-fn.md)
 10. [Maps](docs/07-maps-and-strings.md)
 11. [Strings](docs/07-maps-and-strings.md)
 12. [Pointers](docs/08-pointers.md)
