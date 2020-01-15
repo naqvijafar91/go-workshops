@@ -14,7 +14,7 @@ type Author struct {
 	ID int
 }
 
-Points:
+Add the following features:
 1. Use in memory data structures like maps and slices to store the data.
 2. The API endpoints should work using the in memory data structures.
 3. There should not be any duplicate entry, the name should be the primary key for book and author both.
