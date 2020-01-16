@@ -22,6 +22,7 @@ func main() {
 	c2 := boring("boring!") // Function returning a channel.
 
 	for i := 0; i < 10; i++ {
+		// select waits for any channel to return a value
 		select {
 		case val := <-c1:
 			fmt.Printf("You say: %q\n", val)

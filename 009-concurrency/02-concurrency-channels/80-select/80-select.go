@@ -7,14 +7,9 @@ import (
 
 func main() {
 
-	// kanał tickera
 	tick := time.Tick(100 * time.Millisecond)
-	// kanał timera
 	boom := time.After(time.Second)
-
-	// bomb! pętla cały czas napierdziela select czeka na
-	// wartości z dowolnego kanału, jeżeli ich nie otrzyma
-	// wykonuje kod z default:
+	// boom is a timeout
 	for {
 		select {
 		case <-tick:
