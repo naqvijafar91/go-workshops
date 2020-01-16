@@ -1,6 +1,6 @@
 ## Github style - project structure
 
-In go, idiomatic way is to organise code in "github style", so part of the path is looking like server address to library. Of course if you want you don't need to do this, but whole ecosystem works that way.
+In Go, the idiomatic way is to organize code in "GitHub style", so part of the path is looking like a server address to the library. Of course, if you want you don't need to do this, but the whole ecosystem works that way.
 
 ```sh
 src/
@@ -16,18 +16,18 @@ pkg/
     compiled packages
 ```
 
-Environment variable `$GOPATH` is responsible for path to the root dir of `src`, `bin` and `pkg` directories.
+Environment variable `$GOPATH` is responsible for the path to the root dir of `src`, `bin` and `pkg` directories.
 
 
 ## Packages and Importing
 
-`package` in go is in form of files with directive `package package_name` on top of each file. Package by default is imported as full path to package.
+`package` in go is in the form of files with directive `package package_name` on top of each file. Package by default is imported as the full path to the package.
 
     import "github.com/naqvijafar91/go-workshops/010-basics-importing/sub"
 
 ## Getting and installing external packages
 
-To get external package we need to run go install which will get sources and binaries and put them to `src`/`bin`/`pkg` directories
+To get the external package we need to run go install which will get sources and binaries and put them to `src`/`bin`/`pkg` directories
 
 ```sh
 go install external.package.com/uri/to/package
