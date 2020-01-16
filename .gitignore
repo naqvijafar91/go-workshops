@@ -21,3 +21,4 @@ rethinkdb_data
 debug
 /115-stdlib-streams/file.txt
 .DS_Store
+.vscode/settings.json

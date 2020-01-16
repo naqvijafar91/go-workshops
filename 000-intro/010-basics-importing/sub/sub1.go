@@ -1,8 +1,8 @@
 package sub
 
-const FirstContant = 1
+const FirstConstant = 1
 
-// Hoł - most of UTF-8 variables are working well
-func Hoł() int {
+// Hot - most of UTF-8 variables are working well
+func Hot() int {
 	return 42
 }
