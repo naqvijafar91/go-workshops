@@ -24,25 +24,25 @@ func main() {
 	statement, _ = database.Prepare("DELETE FROM people")
 	statement.Exec()
 	statement, _ = database.Prepare("INSERT INTO people (firstname, lastname) VALUES (?, ?)")
-	var id int
-	var firstname string
-	var lastname string
-	loadDummyData(statement, firstname, lastname)
+	loadDummyData(statement)
 	rows, _ := database.Query("SELECT id, firstname, lastname FROM people")
 	for rows.Next() {
+		var id int
+		var firstname string
+		var lastname string
 		rows.Scan(&id, &firstname, &lastname)
 		fmt.Println(strconv.Itoa(id) + ": " + firstname + " " + lastname)
 	}
 }
 
 //Helper function to insert 10 random names
-func loadDummyData(statement *sql.Stmt, firstname, lastname string) {
+func loadDummyData(statement *sql.Stmt) {
 	// using math.rand package
 	// Need different seed on each run, most used seed is the current time, converted to int64 by UnixNano
 	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < 10; i++ {
-		firstname = randomString(5)
-		lastname = randomString(5)
+		firstname := randomString(5)
+		lastname := randomString(5)
 		fmt.Printf("Inserting FirstName %s Lastname %s \n", firstname, lastname)
 		statement.Exec(firstname, lastname)
 	}
