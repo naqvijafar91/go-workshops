@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // `zeroByVal` has parameter with `int` type
-// so it'll passed by value, `func zeroByVal` will receive copy
+// so it'll be passed by value, `func zeroByVal` will receive copy
 // of this value
 func zeroByVal(ival int) {
 	ival = 0

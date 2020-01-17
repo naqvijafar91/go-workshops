@@ -12,8 +12,8 @@ func (myInt *MyInt) AddAnother(num MyInt) {
 }
 
 func main() {
-	num1 := MyInt(1)
-	num2 := MyInt(2)
+	num1 := MyInt(1) // type conversion syntax
+	num2 := MyInt(2) // convert 2 to MyInt
 
 	num1.AddAnother(num2) // MyInt Type
 	num1.AddAnother(num2)

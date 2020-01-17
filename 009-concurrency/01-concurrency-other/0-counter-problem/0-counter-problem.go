@@ -1,7 +1,7 @@
-// w "Concurent Programming" pojawia się problem dostępu
-// do zmiennych, co jeżeli 2 gorutynki uderzą w tym samym czasie
-// lub zapiszą wartość? jaka zostanie zapisana.
-// Prosty przykład który zobrazuje nam inkrementowanie wartośći
+// there is an access problem in "Concurent Programming"
+// to variables, what if 2 gorutines hit at the same time
+// or save the value? which will be saved.
+// A simple example that illustrates the increment of values
 package main
 
 import (
@@ -36,9 +36,9 @@ func main() {
 
 }
 
-// Data races - to jest typowy przykład
-// aby wykryć automatycznie go udostepnia
-// przelacznik -race
+// Data races - this is a typical example
+// to detect it automatically makes it available
+// switch -race
 
 // go run -race 0-counter-problem.go
 

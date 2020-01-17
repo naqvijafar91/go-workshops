@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 
 	var strings [4]string
-	strings[0] = "Kółko"
+	strings[0] = "Kotko"
 	strings[1] = "Graniaste"
 	strings[2] = "Cztero"
 	strings[3] = "Kanciaste"
@@ -18,8 +18,8 @@ func main() {
 		fmt.Println(i, numbers[i])
 	}
 
-	// nie trzeba podawać ilości elementów
-	// jeżeli inicjujemy z wartociami
+	// no need to enter the number of items
+	// if we initialize with values
 	b := [...]string{"Penn", "Teller"}
 
 	fmt.Println(b)

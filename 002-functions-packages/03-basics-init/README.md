@@ -1,3 +1,3 @@
-## Packages initialisation
+## Packages initialization
 
-`func init() {}` is responsible for package initialisation, it's called only once when import statement for given package is called.
+`func init() {}` is responsible for package initialization, it's called only once when import statement for the given package is called.
