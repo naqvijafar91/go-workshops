@@ -1,6 +1,6 @@
 ## Variables
 
-Variable is the name given to a memory location to store a value of a specific type. There are various syntaxes to declare variables in go.
+Variable is the name given to a memory location to store the value of a specific type. There are various syntaxes to declare variables in go.
 
 ### Declaration and Type inference
 
@@ -137,15 +137,15 @@ The following are the basic types available in go
 
 - int8, int16, int32, int64, int
 
-* uint8, uint16, uint32, uint64, uint
+* uint8, uint16, uint32, uint64, uint -Unsigned integers only contain positive numbers (or zero).
 
 - float32, float64
 
 * complex64, complex128
 
-- byte
-
-* rune
+- byte - same as uint8. Bytes are an extremely common unit of measurement used on computers (1 byte = 8 bits, 1024 bytes = 		1 kilobyte, 1024 kilobytes = 1 megabyte, …) and therefore Go's byte data type is often used in the definition of 		other types.
+- 
+* rune - the same as int32
 
 - string
 
@@ -211,7 +211,7 @@ d: true
 
 **range:** -9223372036854775808 to 9223372036854775807
 
-**int:** represents 32 or 64 bit integers depending on the underlying platform. You should generally be using _int_ to represent integers unless there is a need to use a specific sized integer.
+**int:** represents 32 or 64-bit integers depending on the underlying platform. You should generally be using _int_ to represent integers unless there is a need to use a specifically sized integer.
 
 **size:** 32 bits in 32 bit systems and 64 bit in 64 bit systems.
 
@@ -307,11 +307,11 @@ We can infer from the above output that a and b are of type _int_ and they are _
 
 **range :** 0 to 4294967295 in 32 bit systems and 0 to 18446744073709551615 in 64 bit systems
 
-### Floating point types
+### Floating-point types
 
-**float32:** 32 bit floating point numbers
+**float32:** 32-bit floating-point numbers
 
-**float64:** 64 bit floating point numbers
+**float64:** 64-bit floating-point numbers
 
 ### Complex types
 
@@ -327,7 +327,7 @@ func complex(r, i FloatType) ComplexType
 
 ```
 
-It takes a real and imaginary part as parameter and returns a complex type. _Both the real and imaginary parts must be of the same type. ie either float32 or float64. If both the real and imaginary parts are float32, this function returns a complex value of type complex64. If both the real and imaginary parts are of type float64, this function returns a complex value of type complex128_
+It takes a real and imaginary part as a parameter and returns a complex type. _Both the real and imaginary parts must be of the same type. ie either float32 or float64. If both the real and imaginary parts are float32, this function returns a complex value of type complex64. If both the real and imaginary parts are of type float64, this function returns a complex value of type complex128_
 
 Complex numbers can also be created using the shorthand syntax
 
@@ -337,7 +337,7 @@ c := 6 + 7i
 
 ```
 
-Lets write a small program to understand complex numbers.
+Let's write a small program to understand complex numbers.
 
 ```go
 package main
@@ -425,7 +425,7 @@ var  b  string = "I love Go"
 
 ```
 
-Constants as the name indicate cannot be reassigned again to any other value and hence the below program will not work and it will fail with compilation error **cannot assign to a**.
+Constants, as the name indicate, cannot be reassigned again to any other value and hence the below program will not work and it will fail with compilation error **cannot assign to a**.
 
 ```go
 package main
@@ -479,7 +479,7 @@ What type does a string constant belong to? The answer is they are **untyped**.
 const  hello = "Hello World"
 ```
 
-In the above case we have assigned "Hello World" to a named constant **hello**. Now does the constant _hello_ have a type? The answer is No. The constant still doesn't have a type.
+In the above case, we have assigned "Hello World" to a named constant **hello**. Now does the constant _hello_ have a type? The answer is No. The constant still doesn't have a type.
 
 ```go
 
@@ -529,4 +529,4 @@ func main() {
 
 In the above code, we first create a variable _defaultName_ and assign it to the constant _Sam_. **The default type of the constant Sam is string, so after the assignment defaultName is of type String.**
 
-**Hence the assignment customName = defaultName is not allowed and the compiler throws an error _main.go:7:20: cannot use defaultName (type string) as type myString in assignment_**
+**Hence the assignment custom name = default name is not allowed and the compiler throws an error _main.go:7:20: cannot use defaultName (type string) as type myString in assignment_**

@@ -35,13 +35,15 @@ func main() {
 	}()
 
 	go func() {
+		// range works untill close is called on the channel
 		for job := range jobs {
 			fmt.Printf("process %d\n", job)
+			// Adding dummy processing time to work on the job
 			time.Sleep(time.Millisecond * 100)
 		}
 	}()
 
-	// Do stuff
+	// Do stuff on the main goroutine
 	time.Sleep(time.Second)
 
 	// Quit goroutine
