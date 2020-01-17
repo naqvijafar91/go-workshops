@@ -1,4 +1,4 @@
-// _goroutine_ autorzy określają jako lekki thread.
+// _goroutine_ authors describe as a light thread.
 package main
 
 import (

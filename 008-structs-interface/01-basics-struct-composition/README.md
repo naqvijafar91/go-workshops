@@ -1,3 +1,3 @@
-## Struktury - Kompoozycja
+## Structures - Composition
 
-Kompozycja taki pattern chyba znacie ?
+You probably know the composition like this?

@@ -14,6 +14,7 @@ func main() {
 	writerType := reflect.TypeOf((*io.Writer)(nil)).Elem()
 
 	fileType := reflect.TypeOf((*os.File)(nil))
+	fmt.Println(fileType, writerType)
 	fmt.Println(fileType.Implements(writerType))
 
 }
