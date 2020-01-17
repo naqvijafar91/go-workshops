@@ -125,9 +125,13 @@ To install docker compose please follow [Docker compose installation guide](http
 
 ## Init workshops to play on your machine with code
 
+"go get" command is the standard way of downloading and installing packages and related dependencies. "go get" command clones a git repo to your local machine at *$GOPATH/src/github.com/*
+
+```
 go get github.com/naqvijafar91/go-workshops
 
 cd \$GOPATH/src/github.com/naqvijafar91/go-workshops
+```
 
 ## Go Tools
 
