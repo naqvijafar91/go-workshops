@@ -47,6 +47,6 @@ func show(input Messanger) {
 
 // now show some logs and errors
 func main() {
-	show(LogMessage{"Hoł hoł"})
-	show(ErrorMessage{Message: "Noł noł noł"})
+	show(LogMessage{"Hot hot"})
+	show(ErrorMessage{Message: "Not not not"})
 }

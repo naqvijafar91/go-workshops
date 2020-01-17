@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/naqvijafar91/go-workshops/060-basics-structs-defining/image"
+	"github.com/naqvijafar91/go-workshops/008-structs-interface/00-basics-structs-defining/image"
 )
 
 func main() {

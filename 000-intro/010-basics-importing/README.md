@@ -35,4 +35,4 @@ go install external.package.com/uri/to/package
 
 ## `sub` example package
 
-As we can see our `sub` package is in directory `sub` (obvious) and have two files; `sub1.go` and `sub2.go` each of them also have `package sub` directive which tells compiler that they are in one package.
+As we can see our `sub` package is in directory `sub` (obvious) and have two files; `sub1.go` and `sub2.go` each of them also have `package sub` directive which tells the compiler that they are in one package.
