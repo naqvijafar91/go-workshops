@@ -2,10 +2,11 @@ package package3
 
 import (
 	"fmt"
-	"github.com/naqvijafar91/go-workshops/041-basics-init/package1"
-	"github.com/naqvijafar91/go-workshops/041-basics-init/package2"
-	"github.com/naqvijafar91/go-workshops/041-basics-init/package4"
 	"io"
+
+	"github.com/naqvijafar91/go-workshops/002-functions-packages/03-basics-init/package1"
+	"github.com/naqvijafar91/go-workshops/002-functions-packages/03-basics-init/package2"
+	"github.com/naqvijafar91/go-workshops/002-functions-packages/03-basics-init/package4"
 )
 
 func init() {

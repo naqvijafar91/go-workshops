@@ -18,9 +18,9 @@ func main() {
 	dev := Developer{2}
 	fmt.Printf("%+v\n", dev)
 
-	dev.CutHand()
+	dev.CutWithSpoon()
 	fmt.Printf("%+v\n", dev)
 
-	dev.CutWithSpoon()
+	dev.CutHand()
 	fmt.Printf("%+v\n", dev)
 }

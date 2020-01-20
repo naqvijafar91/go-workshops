@@ -21,6 +21,7 @@ This repository contains files needed for managing Go language workshop - it's s
 16. [sync.WaitGroup and sync.Mutex](docs/10-concurrency.md)
 17. [Unit Testing](docs/12-testing.md)
 18. [Object Oriented Programming in Go](docs/11-object-oriented-programming.md)
+19. [WATS](999-WATS/)
 
 
 ## About Go
