@@ -14,4 +14,6 @@ func main() {
 	runes := []rune(str)
 	sub = string(runes[:3])
 	fmt.Println(sub)
+
+	// Compare the output from the above two print statements to understand the importance of runes
 }
