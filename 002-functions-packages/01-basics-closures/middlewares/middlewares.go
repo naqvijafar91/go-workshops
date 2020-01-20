@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	// More on http in the http section
 	http.HandleFunc("/hello", timed(hello))
 	http.ListenAndServe(":3000", nil)
 }
