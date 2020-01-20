@@ -8,10 +8,10 @@ func SumDigits(nums []int) (int, error) {
 	sum := 0
 	for _, num := range nums {
 		if num >= 10 {
-			return 0, fmt.Errorf("Number is too big: %d, i need number <10", num)
 			// errors.New creates new `error` instance
 			// we can use also:
 			// fmt.Errorf("Some Error ID:%d", 102323812389)
+			return 0, fmt.Errorf("Number is too big: %d, i need number <10", num)
 		}
 		sum += num
 	}
