@@ -24,7 +24,7 @@ func main() {
 
 ```
 
-We then write our test in a separate file. The test file can be in a different package (and folder) or the same one (`main`). Here's a unit test to check addition:
+We then write our test in a separate file. The text file can be in a different package (and folder) or the same one (`main`). Here's a unit test to check addition:
 
 ```go
 package main
@@ -54,7 +54,7 @@ Characteristics of a Golang test function:
 
 **Test tables**
 
-The concept of "test tables" is a set (slice array) of test input and output values. Here is an example for the  `Sum`  function:
+The concept of "test tables" is a set (slice array) of test input and output values. Here is an example of the  `Sum`  function:
 
 ```golang
 package main
@@ -122,13 +122,13 @@ go test github.com/alexellis/golangbasics1
 
 You have now run a unit test in Go, for a more verbose output type in  `go test -v`  and you will see the PASS/FAIL result of each test including any extra logging produced by  `t.Log`.
 
-> The difference between unit and integration tests is that unit tests usually isolate dependencies that communicate with network, disk etc. Unit tests normally test only one thing such as a function.
+> The difference between unit and integration tests is that unit tests usually isolate dependencies that communicate with the network, disk, etc. Unit tests normally test only one thing such as a function.
 
 ## 1.3 More on  `go test`
 
 **Statement coverage**
 
-The  `go test`  tool has built-in code-coverage for statements. To try it with out example above type in:
+The  `go test`  tool has built-in code-coverage for statements. To try it without example above type in:
 
 ```
 $ go test -cover
@@ -138,11 +138,11 @@ ok  	github.com/alexellis/golangbasics1	0.009s
 
 ```
 
- If you delete the "if" statement from our previous test it will retain 50% test coverage but lose its usefulness in verifying the behaviour of the "Sum" method.
+ If you delete the "if" a statement from our previous test it will retain 50% test coverage but lose its usefulness in verifying the behavior of the "Sum" method.
 
 **Generating an HTML coverage report**
 
-If you use the following two commands you can visualise which parts of your program have been covered by the tests and which statements are lacking:
+If you use the following two commands you can visualize which parts of your program have been covered by the tests and which statements are lacking:
 
 ```
 go test -cover -coverprofile=c.out
@@ -154,13 +154,13 @@ Then open coverage.html in a web-browser.
 
 **Go doesn't ship your tests**
 
-In addition, it may feel un-natural to leave files named  `addition_test.go`  in the middle of your package. Rest assured that the Go compiler and linker will not ship your test files in any binaries it produces.
+Also, it may feel unnatural to leave files named  `addition_test.go`  in the middle of your package. Rest assured that the Go compiler and linker will not ship your test files in any binaries it produces.
 
 For more on the basics read the  [Golang testing docs](https://golang.org/pkg/testing/).
 
 ### 1.4 Isolating dependencies
 
-The key factor that defines a unit test is isolation from runtime-dependencies or collaborators.
+The key factor that defines a unit test in isolation from runtime-dependencies or collaborators.
 
 This is achieved in Golang through interfaces, but if you're coming from a C# or Java background, they look a little different in Go. Interfaces are implied rather than enforced which means that concrete classes don't need to know about the interface ahead of time.
 
@@ -213,14 +213,14 @@ func main() {
 
 ```
 
-Before implementing your own abstractions (as above) it is a good idea to search the Golang docs to see if there is already something you can use. In the case above we could also use the standard library in the  [bytes](https://golang.org/pkg/bytes/)  package:
+Before implementing your abstractions (as above) it is a good idea to search the Golang docs to see if there is already something you can use. In the case above we could also use the standard library in the  [bytes](https://golang.org/pkg/bytes/)  package:
 
 ```
     func NewReader(b []byte) *Reader
 
 ```
 
-The Golang  [testing/iotest](https://golang.org/pkg/testing/iotest/)  package provides some Reader implementations which are slow or which cause errors to be thrown half way through reading. These are ideal for resilience testing.
+The Golang  [testing/iotest](https://golang.org/pkg/testing/iotest/)  package provides some Reader implementations which are slow or which cause errors to be thrown halfway through reading. These are ideal for resilience testing.
 
 -   Golang docs:  [testing/iotest](https://golang.org/pkg/testing/iotest/)
 
@@ -251,9 +251,9 @@ func TestGetAstronauts(t *testing.T) {
 
 ```
 
-I have an exported method called GetAstronauts which calls into a HTTP endpoint, reads the bytes from the result and then parses this into a struct and returns the integer in the "number" property.
+I have an exported method called GetAstronauts which calls into an HTTP endpoint, reads the bytes from the result and then parses this into a struct and returns the integer in the "number" property.
 
-My fake / test-double in the test only returns the bare minimum of JSON needed to satisfy the test, and to begin with I had it return a different number so that I knew the test worked. It's hard to be sure whether a test that passes first time has worked.
+My fake / test-double in the test only returns the bare minimum of JSON needed to satisfy the test and to begin with I had it return a different number so that I knew the test worked. It's hard to be sure whether a test that passes the first time has worked.
 
 Here's the application code where we run our  `main`  function. The  `GetAstronauts`  function takes an interface as its first argument allowing us to isolate and abstract away any HTTP logic from this file and its import list.
 
@@ -348,4 +348,4 @@ func (LiveGetWebRequest) FetchBytes(url string) []byte {
 
 **Choosing what to abstract**
 
-The above unit test is effectively only testing the  `json.Unmarshal`  function and our assumptions about what a valid HTTP response body would look like. This abstracting may be OK for our example, but our code coverage score will be low.
+The above unit test is effectively only testing the  `json.Unmarshal`  function and our assumptions about what a valid HTTP response body would look like. This abstracting may be OK for our example, but our code coverage score will be lower.

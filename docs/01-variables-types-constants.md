@@ -35,11 +35,11 @@ fmt.Println("my name is", name3, ", age is", age3, "and height is", height3)
 
 ```
 
-### Short hand declaration
+### Shorthand declaration
 
-Go also provides another concise way for declaring variables. This is known as short hand declaration and it uses **:=** operator.
+Go also provides another concise way of declaring variables. This is known as shorthand declaration and it uses **:=** operator.
 
-**name := initialvalue** is the short hand syntax to declare a variable.
+**name := initial-value** is the shorthand syntax to declare a variable.
 
 ```go
 package main
@@ -55,9 +55,9 @@ fmt.Println("my name is", name, "age is", age)
 
 [Run in playground](https://play.golang.org/p/ctqgw4w6kx)
 
-If you run the above program, you can see `my name is naveen age is 29` as the output.
+If you run the above program, you can see `my name is Naveen age is 29` as the output.
 
-Short hand syntax can only be used when at least one of the variables in the left side of **:=** is newly declared.
+Shorthand syntax can only be used when at least one of the variables on the left side of **:=** is newly declared.
 
 ```go
 package main
@@ -108,7 +108,7 @@ func main() {
 
 [Run in playground](https://play.golang.org/p/EYTtRnlDu3)
 
-it will throw error `no new variables on left side of :=` This is because both the variables **a** and **b** have already been declared and there are no new variables in the left side of **:=**
+it will throw error `no new variables on the left side of `:=` This is because both the variables **a** and **b** has already been declared and there are no new variables in the left side of **:=**
 
 Since Go is strongly typed, variables declared as belonging to one type cannot be assigned a value of another type.
 
@@ -143,7 +143,7 @@ The following are the basic types available in go
 
 * complex64, complex128
 
-- byte - same as uint8. Bytes are an extremely common unit of measurement used on computers (1 byte = 8 bits, 1024 bytes = 		1 kilobyte, 1024 kilobytes = 1 megabyte, …) and therefore Go's byte data type is often used in the definition of 		other types.
+- byte - same as uint8. Bytes are an extremely common unit of measurement used on computers (1 byte = 8 bits, 1024 bytes = 		1 kilobyte, 1024 kilobytes = 1 megabyte, …) and therefore Go's byte data type is often used in the definition of other types.
 - 
 * rune - the same as int32
 
@@ -237,7 +237,7 @@ func main() {
 
 The above program will output `value of a is 89 and b is 95`
 
-The type of a variable can be printed using **%T** format specifier in `Printf` function. Go has a package [unsafe](https://golang.org/pkg/unsafe/) which has a [Sizeof](https://golang.org/pkg/unsafe/#Sizeof) function which returns in bytes the size of the variable passed to it. _unsafe_ package should be used with care as the code using it might have portability issues.
+The type of a variable can be printed using a **%T** format specifier in the `Printf` function. Go has a package [unsafe](https://golang.org/pkg/unsafe/) which has a [Sizeof](https://golang.org/pkg/unsafe/#Sizeof) function which returns in bytes the size of the variable passed to it. _unsafe_ package should be used with care as the code using it might have portability issues.
 
 ```go
 package main
@@ -273,7 +273,7 @@ type of a is int, size of a is 4
 type of b is int, size of b is 4
 ```
 
-We can infer from the above output that a and b are of type _int_ and they are _32 bit sized(4 bytes)_. The output will vary if you run the above program on a 64 bit system. In a 64 bit system, a and b occupy 64 bits (8 bytes).
+We can infer from the above output that a and b are of type _int_ and they are _32 bit sized(4 bytes)_. The output will vary if you run the above program on a 64-bit system. In a 64 bit system, a and b occupy 64 bits (8 bytes).
 
 ### Unsigned integers
 
@@ -301,11 +301,11 @@ We can infer from the above output that a and b are of type _int_ and they are _
 
 **range:** 0 to 18446744073709551615
 
-**uint :** represents 32 or 64 bit unsigned integers depending on the underlying platform.
+**uint:** represents 32 or 64-bit unsigned integers depending on the underlying platform.
 
-**size :** 32 bits in 32 bit systems and 64 bits in 64 bit systems.
+**size:** 32 bits in 32 bit systems and 64 bits in 64 bit systems.
 
-**range :** 0 to 4294967295 in 32 bit systems and 0 to 18446744073709551615 in 64 bit systems
+**range:** 0 to 4294967295 in 32 bit systems and 0 to 18446744073709551615 in 64 bit systems
 
 ### Floating-point types
 
@@ -465,7 +465,7 @@ func main() {
 
 In the above program, `a` is a variable and hence it can be assigned to the result of the function `math.Sqrt(4)`
 
-_b_ is a constant and the value of b needs to be know at compile time. The function `math.Sqrt(4)` will be evaluated only during run time and hence `const b = math.Sqrt(4)` throws **error main.go:11: const initializer math.Sqrt(4) is not a constant.**
+_b_ is a constant and the value of b needs to know at compile time. The function `math.Sqrt(4)` will be evaluated only during run time and hence `const b = math.Sqrt(4)` throws **error main.go:11: const initializer math.Sqrt(4) is not constant.**
 
 ### String Constants
 
@@ -507,7 +507,7 @@ const typedhello string = "Hello World"
 
 **_typedhello_ in the above code is a constant of type string.**
 
-Go is a strongly typed language. Mixing types during assignment is not allowed.
+Go is a strongly typed language. Mixing types during the assignment is not allowed.
 
 ```go
 package main
@@ -527,6 +527,6 @@ func main() {
 
 [Run in playground](https://play.golang.org/p/1Q-vudNn_9)
 
-In the above code, we first create a variable _defaultName_ and assign it to the constant _Sam_. **The default type of the constant Sam is string, so after the assignment defaultName is of type String.**
+In the above code, we first create a variable _defaultName_ and assign it to the constant _Sam_. **The default type of the constant Sam is a string, so after the assignment default name is of type String.**
 
-**Hence the assignment custom name = default name is not allowed and the compiler throws an error _main.go:7:20: cannot use defaultName (type string) as type myString in assignment_**
+**Hence the assignment custom name = default name is not allowed and the compiler throws an error _main.go:7:20: cannot use default name (type string) as type myString in assignment_**

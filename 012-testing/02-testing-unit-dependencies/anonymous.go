@@ -13,6 +13,7 @@ const (
 
 var url = "http://api.some.pl/v1/users"
 
+// var with package scope
 var call = func(method int, url string) {
 	fmt.Println(method, url)
 }

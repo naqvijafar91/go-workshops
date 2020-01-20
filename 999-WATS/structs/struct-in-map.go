@@ -1,4 +1,3 @@
-// to jest dziwne :/
 package main
 
 import "fmt"
@@ -11,6 +10,6 @@ func main() {
 	n := make(map[string]data)
 	n["x"] = data{"one"}
 	fmt.Println(n["x"])
-	n["x"].Name = "three"
+	n["x"].Name = "three" // that's weird : shorturl.at/aorz5
 	fmt.Println(n["x"])
 }

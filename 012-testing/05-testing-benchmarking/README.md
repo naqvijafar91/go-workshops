@@ -1,7 +1,7 @@
-## Running commands in shell
+## Running commands in the shell
 
 How to write benchmarks in Go
-This post continues a series on the testing package I started a few weeks back. You can read the previous article on writing table driven tests here.
+This post continues a series on the testing package I started a few weeks back. You can read the previous article on writing table-driven tests here.
 
 Introduction
 The Go testing package contains a benchmarking facility that can be used to examine the performance of your Go code. This post explains how to use the testing package to write a simple benchmark.

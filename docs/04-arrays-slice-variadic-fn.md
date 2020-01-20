@@ -4,13 +4,13 @@
 
 ### Arrays
 
-An array is a collection of elements that belong to the same type. For example the collection of integers 5, 8, 9, 79, 76 form an array. Just like Java, mixing values of different types, for example an array that contains both strings and integers is not allowed in Go.
+An array is a collection of elements that belong to the same type. For example, the collection of integers 5, 8, 9, 79, 76 forms an array. Just like Java, mixing values of different types, for example, an array that contains both strings and integers is not allowed in Go.
 
 ##### Declaration
 
 
 
-There are different ways to declare arrays. Lets look at them one by one.
+There are different ways to declare arrays. Let's look at them one by one.
 
 ```go
 package main
@@ -29,7 +29,7 @@ func main() {
 
 [Run in playground](https://play.golang.org/p/Zvgh82u0ej)
 
-**var a [3]int**  declares a integer array of length 3.  **All elements in an array are automatically assigned the zero value of the array type**. 
+**var a [3]int**  declares an integer array of length 3.  **All elements in an array are automatically assigned the zero value of the array type**. 
 
 
 
@@ -73,7 +73,7 @@ func main() {
 
 The program above will print the same  **output**  `[12 78 50]`
 
-It is not necessary that all elements in an array have to be assigned a value during short hand declaration.
+It is not necessary that all elements in an array have to be assigned a value during a short hand declaration.
 
 ```go
 package main
@@ -139,7 +139,7 @@ b is [Singapore China India Germany France]
 
 ```
 
-Similarly when arrays are passed to functions as parameters, they are passed by value and the original array in unchanged.
+Similarly, when arrays are passed to functions as parameters, they are passed by value and the original array is unchanged.
 
 ```go
 package main
@@ -171,7 +171,7 @@ after passing to function  [5 6 7 8 8]
 
 ##### Length of an array
 
-The length of the array is found by passing the array as parameter to the  `len`  function.
+The length of the array is found by passing the array as a parameter to the  `len`  function.
 
 ```go
 package main
@@ -215,7 +215,7 @@ func main() {
 
 ```
 
-Go provides a better and concise way to iterate over an array by using the  **range**  form of the  `for`  loop.  `range`  returns both the index and the value at that index. Let's rewrite the above code using range.
+Go provides a better and concise way to iterate over an array by using the  **range**  form of the  `for`  loop.  `range`  returns both the index and the value at that index. Let's rewrite the above code using the range.
 
 ```go
 package main
@@ -252,7 +252,7 @@ for _, v := range a { //ignores index
 }
 ```
 
-The above for loop ignores the index. Similarly the value can also be ignored.
+The above for loop ignores the index. Similarly, the value can also be ignored.
 
 ##### Multidimensional arrays
 
@@ -352,7 +352,7 @@ func main() {
 
 [Run in playground](https://play.golang.org/p/_Z97MgXavA)
 
-In the above program in line no. 9,  `c := []int{6, 7, 8}`  creates an array with 3 integers and returns a slice reference which is stored in c.
+In the above program in line no. 9,  `c:= []int{6, 7, 8}`  creates an array with 3 integers and returns a slice reference which is stored in c.
 
 ##### modifying a slice
 
@@ -387,7 +387,7 @@ array after [57 89 91 83 101 78 67 69 59]
 
 ```
 
-When a number of slices share the same underlying array, the changes that each one makes will be reflected in the array.
+When many slices share the same underlying array, the changes that each one makes will be reflected in the array.
 
 ```go
 package main
@@ -418,7 +418,7 @@ array after modification to slice nums1 [100 79 80]
 array after modification to slice nums2 [100 101 80]  
 ```
 
-From the output it's clear that when slices share the same array, the modifications which each one makes are reflected in the array.
+From the output, it's clear that when slices share the same array, the modifications which each one makes are reflected in the array.
 
 #### Length and capacity of a slice
 
@@ -449,7 +449,7 @@ func main() {
 
 The  [program](https://play.golang.org/p/a1WOcdv827)  outputs  **length of slice 2 capacity 6**.
 
-A slice can be re-sliced upto its capacity. Anything beyond that will cause the program to throw a run time error.
+A slice can be re-sliced up to its capacity. Anything beyond that will cause the program to throw a run time error.
 
 ```go
 package main
@@ -479,7 +479,7 @@ After re-slicing length is 6 and capacity is 6
 ```
 #### creating a slice using make
 
-_func make([]T, len, cap) []T_  can be used to create a slice by passing the type, length and capacity. The capacity parameter is optional and defaults to the length. 
+_func make([]T, len, cap) []T_  can be used to create a slice bypassing the type, length, and capacity. The capacity parameter is optional and defaults to the length. 
 
 ```go
 package main
@@ -503,7 +503,7 @@ The values are zeroed by default when a slice is created using make. The above p
 
 The definition of append function is  `func append(s []T, x ...T) []T`.
 
-**x ...T**  in the function definition means that the function accepts variable number of arguments for the parameter x. These type of functions are called  [variadic functions](https://golangbot.com/variadic-functions/).
+**x ...T**  in the function definition means that the function accepts a variable number of arguments for the parameter x. These type of functions are called  [variadic functions](https://golangbot.com/variadic-functions/).
 
 > ### Q) If slices are backed by arrays and arrays themselves are of fixed length then how come a slice is of dynamic length?
 
@@ -582,7 +582,7 @@ func main() {
 
 [Run in playground](https://play.golang.org/p/UnHOH_u6HS)
 
-Output of the program is  `food: [potatoes tomatoes brinjal oranges apples]`
+The output of the program is  `food: [potatoes tomatoes brinjal oranges apples]`
 
 #### Internal Representation of a slice
 
@@ -598,7 +598,7 @@ type slice struct {
 }
 ```
 
-When a slice is passed to a function, even though it's passed by value, the pointer variable will refer to the same underlying array. When a slice is passed to a function as parameter, changes made inside the function are visible outside the function too. 
+When a slice is passed to a function, even though it's passed by value, the pointer variable will refer to the same underlying array. When a slice is passed to a function as a parameter, changes made inside the function are visible outside the function too. 
 
 ```go
 package main
@@ -641,7 +641,7 @@ A) Refer to the internal representation.
 
 #### Memory Optimisation
 
-Slices hold a reference to the underlying array. As long as the slice is in memory, the array cannot be garbage collected. This might be of concern when it comes to memory management. Lets assume that we have a very large array and we are interested in processing only a small part of it. Henceforth we create a slice from that array and start processing the slice. The important thing to be noted here is that the array will still be in memory since the slice references it.
+Slices hold a reference to the underlying array. As long as the slice is in memory, the array cannot be garbage collected. This might be of concern when it comes to memory management. Let's assume that we have a very large array and we are interested in processing only a small part of it. Henceforth we create a slice from that array and start processing the slice. The important thing to be noted here is that the array will still be in memory since the slice references it.
 
 One way to solve this problem is to use the  [copy](https://golang.org/pkg/builtin/#copy)  function  `func copy(dst, src []T) int`  to make a copy of that slice. This way we can use the new slice and the original array can be garbage collected.
 
@@ -674,7 +674,7 @@ Now  `countries`  array can be garbage collected since  `neededCountries`  is no
 
 ### What is a variadic function?
 
-Functions in general accept only a fixed number of arguments.  _A variadic function is a function that accepts a variable number of arguments. If the last parameter of a function definition is prefixed by ellipsis  **...**, then the function can accept any number of arguments for that parameter._
+Functions, in general, accept only a fixed number of arguments.  _A variadic function is a function that accepts a variable number of arguments. If the last parameter of a function definition is prefixed by ellipsis  **...**, then the function can accept any number of arguments for that parameter._
 
 **Only the last parameter of a function can be variadic. We will learn why this is the case in the next section of this tutorial.**
 

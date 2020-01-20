@@ -1,7 +1,7 @@
 # Concurrency 
 
 ### Topics:
-1. Concurrency vs Parallellism
+1. Concurrency vs Parallelism
 2. Goroutines
 3. sync.WaitGroup
 4. channels
@@ -22,7 +22,7 @@ Concurrency is about dealing with lots of things at once. Parallelism is about d
 
 1. Goroutines are functions or methods that run concurrently with other functions or methods. 
 2. They can be thought of as lightweight threads.
-3. Cost of creating and managing a goroutine is very small as compared to threads and that is why it is normal for an application to have thousands of goroutines running concurrently.
+3. The cost of creating and managing a goroutine is very small as compared to threads and that is why it is normal for an application to have thousands of goroutines running concurrently.
    
 ```go
 package main
@@ -85,7 +85,7 @@ Not only is the above program faster, as now we are not wasting any time and the
 
 Channels are the pipes that connect concurrent goroutines. You can send values into channels from one goroutine and receive those values into another goroutine. It is the backbone behind Go’s approach to concurrency:
 
-**_Do not communicate by sharing the memory; instead, share memory by communicating._**
+**_Do does not communicate by sharing the memory; instead, share memory by communicating._**
 
 So far we know how to launch goroutines and how to wait for that to finish using sync.WaitGroup, but  **what if we also want to return something from that goroutine?**  Let’s say that you have launched a batch job in a separate background goroutine and now you want to know whether the job failed or succeeded. For this tutorial, we will modify the above program to return the string rather than printing it, you can return anything from a goroutine using the same technique. Please go through the below program and read the comments.
 

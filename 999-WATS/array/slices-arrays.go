@@ -17,4 +17,3 @@ func main() {
 	slice[0] = 999
 	fmt.Println(slice, array)
 }
-

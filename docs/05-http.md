@@ -5,17 +5,17 @@ REST is everywhere these days, from websites to enterprise applications, the RES
 
 ## [](https://tutorialedge.net/golang/creating-restful-api-with-golang/#json)JSON
 
-For the purpose of this tutorial I’ll be using JavaScript Object Notation as a means of sending and receiving all information and thankfully Go comes with some excellent support for encoding and decoding these formats using the standard library package, encoding/json.
+For this tutorial I’ll be using JavaScript Object Notation as a means of sending and receiving all information and thankfully Go comes with some excellent support for encoding and decoding these formats using the standard library package, encoding/json.
 
 > **Note -**  For more information on the encoding/json package check out the official documentation:  [encoding/json](https://golang.org/pkg/encoding/json/)
 
 ## [](https://tutorialedge.net/golang/creating-restful-api-with-golang/#marshalling)Marshalling
 
-In order for us to easily We can easily convert data structures in GO into JSON by using something called marshalling which produces a byte slice containing a very long string with no extraneous white space.
+For us to easily We can easily convert data structures in GO into JSON by using something called marshaling which produces a byte slice containing a very long string with no extraneous white space.
 
 # [](https://tutorialedge.net/golang/creating-restful-api-with-golang/#getting-started-with-a-basic-api)Getting Started with A Basic API
 
-To get started we will have to create a very simple server which can handle HTTP requests. To do this we’ll create a new file called  `main.go`. Within this  `main.go`  file we’ll want to define 3 distinct functions. A  `homePage`  function that will handle all requests to our root URL, a  `handleRequests`  function that will match the URL path hit with a defined function and a  `main`  function which will kick off our API.
+To get started we will have to create a very simple server that can handle HTTP requests. To do this we’ll create a new file called  `main.go`. Within this  `main.go` file we’ll want to define 3 distinct functions. A  `homePage`  function that will handle all requests to our root URL, a  `handleRequests`  function that will match the URL path hit with a defined function and a  `main`  function which will kick off our API.
 
 main.go
 
@@ -64,7 +64,7 @@ type Article struct {
 var Articles []Article
 ```
 
-Our Struct contains the 3 properties we need to represent all of the articles on our site. In order for this to work, we’ll also have to import the  `"encoding/json"`  package into our list of imports.
+Our Struct contains the 3 properties we need to represent all of the articles on our site. For this to work, we’ll also have to import the  `"encoding/json"`  package into our list of imports.
 
 Let’s now update our  `main`  function so that our  `Articles`  variable is populated with some dummy data that we can retrieve and modify later on.
 
@@ -82,9 +82,9 @@ Perfect, let’s now move on to creating our  `/articles`  endpoint which will r
 
 # [](https://tutorialedge.net/golang/creating-restful-api-with-golang/#retrieving-all-articles)Retrieving All Articles
 
-In this part of the tutorial we are going to create a new REST endpoint which, when hit with a  `HTTP GET`  request, will return all of the articles for our site.
+In this part of the tutorial, we are going to create a new REST endpoint which, when hit with an `HTTP GET`  request, will return all of the articles for our site.
 
-We’ll first start off by creating a new function called  `returnAllArticles`, which will do the simple task of returning our newly populated  `Articles`  variable, encoded in JSON format:
+We’ll first start by creating a new function called  `returnAllArticles`, which will do the simple task of returning our newly populated  `Articles`  variable, encoded in JSON format:
 
 main.go
 
@@ -131,7 +131,7 @@ Now that we’ve done this, run the code by typing  `go run main.go`  and then o
 
 # Gorilla Mux
 
-Now the standard library is adequate at providing everything you need to get your own simple REST API up and running but now that we’ve got the basic concepts down I feel it’s time to introduce third-party router packages. The most notable and highly used is the  [gorilla/mux router](https://github.com/gorilla/mux)
+Now the standard library is adequate at providing everything you need to get your simple REST API up and running but now that we’ve got the basic concepts down I feel it’s time to introduce third-party router packages. The most notable and highly used is the  [gorilla/mux router](https://github.com/gorilla/mux)
 
 ### `go get`
 
@@ -187,7 +187,7 @@ func main() {
 }
 ```
 
-When you now run this, you will see no real change to the way our system works. It will still start up on the same port and return the same results depending on what endpoints you hit.
+When you now run this, you will see no real change to the way our system works. It will still startup on the same port and return the same results depending on what endpoints you hit.
 
 The only real difference is that we now have a gorilla/mux router which will allow us to easily do things such as retrieve path and query parameters later on in this tutorial.
 
@@ -230,7 +230,7 @@ func main() {
 }
 ```
 
-Now that we’ve done that, in our  `returnSingleArticle`  function we can obtain this  `{id}`  value from our URL and we can return the article that matches this criteria. As we haven’t stored our data anywhere we’ll just be returning the Id that was passed to the browser.
+Now that we’ve done that, in our  `returnSingleArticle`  function we can obtain this  `{id}`  value from our URL and we can return the article that matches this criterion. As we haven’t stored our data anywhere we’ll just be returning the Id that was passed to the browser.
 
 ```go
 func returnSingleArticle(w http.ResponseWriter, r *http.Request){
@@ -241,7 +241,7 @@ func returnSingleArticle(w http.ResponseWriter, r *http.Request){
 }
 ```
 
-If we navigate to  `[http://localhost:1000/article/1](http://localhost:1000/article/1)`after we’ve now run this, you should see  `Key: 1`  being printed out within the browser.
+If we navigate to  `[http://localhost:1000/article/1](http://localhost:1000/article/1)` after we’ve now run this, you should see  `Key: 1`  being printed out within the browser.
 
 Let’s use this  `key`  value to return the specific article that matches that key.
 
@@ -281,7 +281,7 @@ You will now see the article matching the key  `1`  returned as JSON.
 
 ## Creating new Articles
 
-Once again, you will need to create a new function which will do the job of creating this new article.
+Once again, you will need to create a new function that will do the job of creating this new article.
 
 Let’s start off by creating a  `createNewArticle()`  function within our  `main.go`  file.
 
@@ -294,7 +294,7 @@ func createNewArticle(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-With this function defined, you can now add the route to the list of routes defined within the  `handleRequests`  function. This time however, we’ll be adding  `.Methods("POST")`  to the end of our route to specify that we only want to call this function when the incoming request is a  `HTTP POST`  request:
+With this function defined, you can now add the route to the list of routes defined within the  `handleRequests`  function. This time, however, we’ll be adding  `.Methods("POST")`  to the end of our route to specify that we only want to call this function when the incoming request is an `HTTP POST`  request:
 
 ```go
 func handleRequests() {
@@ -309,7 +309,7 @@ func handleRequests() {
 }
 ```
 
-Try running this again and then try submitting a  `HTTP POST`  request which contains the following  `POST`  body:
+Try running this again and then try submitting an `HTTP POST`  request which contains the following  `POST`  body:
 
 ```js
 {
@@ -412,13 +412,13 @@ func handleRequests() {
 }
 ```
 
-Try sending a new  `HTTP DELETE`  request to  `[http://localhost:10000/article/2](http://localhost:10000/article/2)`. This will delete the second article within your Articles array and when you subsequently hit  `[http://localhost:10000/articles](http://localhost:10000/articles)`  with a  `HTTP GET`  request, you should see it now only contains a single  `Article`.
+Try sending a new  `HTTP DELETE`  request to  `[http://localhost:10000/article/2](http://localhost:10000/article/2)`. This will delete the second article within your Articles array and when you subsequently hit  `[http://localhost:10000/articles](http://localhost:10000/articles)`  with an `HTTP GET`  request, you should see it now only contains a single  `Article`.
 
-> **Note**  - To keep this simple, we are updating a global variable. However, we aren’t doing any checks to ensure that our code is free of race conditions. In order to make this code thread-safe. Check out sync.Mutex
+> **Note**  - To keep this simple, we are updating a global variable. However, we aren’t doing any checks to ensure that our code is free of race conditions. To make this code thread-safe. Check out sync.Mutex
 
 ## Updating Articles Endpoint
 
-The final endpoint you will need to implement is the Update endpoint. This endpoint will be a  `HTTP PUT`  based endpoint and will need to take in an  `Id`  path parameter, the same way we have done for our  `HTTP DELETE`  endpoint, as well as a JSON request body.
+The final endpoint you will need to implement is the Update endpoint. This endpoint will be an `HTTP PUT`  based endpoint and will need to take in an  `Id`  path parameter, the same way we have done for our  `HTTP DELETE`  endpoint, as well as a JSON request body.
 
 This JSON in the body of the incoming  `HTTP PUT`  request will contain the newer version of the article that we want to update.
 
