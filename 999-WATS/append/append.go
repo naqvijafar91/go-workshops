@@ -21,5 +21,5 @@ func main() {
 // created slice is less than or equal to the capacity of the initial slice.
 
 // It’s important to understand what is happening under the hood when using some of the
-// built-in slice functions. For more info, Robe Pike wrote a very helpful blog post which
-// goes into a lot of useful details around slices.
+// built-in slice functions. For more info, Robe Pike wrote a very helpful blog post
+//(https://blog.golang.org/slices) which goes into a lot of useful details around slices.

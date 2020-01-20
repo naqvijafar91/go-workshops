@@ -5,14 +5,14 @@
 - Zero value of a pointer
 - Creating pointers using new function
 - Dereferencing a pointer
-- Passing pointer to a function
+- Passing a pointer to a function
 - Returning pointer from a function
-- Do not pass a pointer to an array as a argument to a function. Use slice instead.
+- Do not pass a pointer to an array as an argument to a function. Use slice instead.
 - Go does not support pointer arithmetic
 
 ### What is a pointer?
 
-A pointer is a variable which stores the memory address of another variable.
+A pointer is a variable that stores the memory address of another variable.
 
 ![Pointers in Go](https://golangbot.com/content/images/2017/05/pointer-explained.png)
 
@@ -22,7 +22,7 @@ In the above illustration, variable `b` has value `156` and is stored at memory 
 
 **\*T** is the type of the pointer variable which points to a value of type **T**.
 
-Lets write a program which declares a pointer.
+Let's write a program that declares a pointer.
 
 ```go
 package main
@@ -83,7 +83,7 @@ b after initialisation is 0x1040a124
 
 ### Creating pointers using the new function
 
-Go also provides a handy function `new` to create pointers. The `new` function takes a type as argument and returns a pointer to a newly allocated zero value of the type passed as argument.
+Go also provides a handy function `new` to create pointers. The `new` function takes a type as argument and returns a pointer to a newly allocated zero value of the type passed as an argument.
 
 The following example will make things more clear.
 
@@ -141,7 +141,7 @@ address of b is 0x1040a124
 value of b is 255
 ```
 
-Lets write one more program where we change the value in b using the pointer.
+Let's write one more program where we change the value in b, using the pointer.
 
 ```go
 package main
@@ -224,16 +224,16 @@ func main() {
 
 [Run in playground](https://play.golang.org/p/I6r-fRx2qML)
 
-**The behavior of this code is undefined in programming languages such as C and C++ as the variable `i` goes out of scope once the function `hello` returns. But in the case of Go, the compiler does a escape analysis and allocates `i` on the heap as the address escapes the local scope.**
+**The behavior of this code is undefined in programming languages such as C and C++ as the variable `i` goes out of scope once the function `hello` returns. But in the case of Go, the compiler does an escape analysis and allocates `i` on the heap as the address escapes the local scope.**
 
 ```
 Value of d 5
 
 ```
 
-### Do not pass a pointer to an array as a argument to a function. Use slice instead.
+### Do not pass a pointer to an array as an argument to a function. Use slice instead.
 
-Lets assume that we want to make some modifications to an array inside the function and the changes made to that array inside the function should be visible to the caller. One way of doing this is to pass a pointer to an array as an argument to the function.
+Let's assume that we want to make some modifications to an array inside the function and the changes made to that array inside the function should be visible to the caller. One way of doing this is to pass a pointer to an array as an argument to the function.
 
 ```go
 package main
@@ -256,9 +256,9 @@ func main() {
 
 [Run in playground](https://play.golang.org/p/lOIznCbcvs)
 
-In line no. 13 of the above program, we are passing the address of the array `a` to the `modify` function. In line no.8 in the `modify` function we are dereferencing arr and assigning `90` to the first element of the array. This program outputs `[90 90 91]`
+In line no. 13 of the above program, we are passing the address of the array `a` to the `modify` function. In line no.8 in the `modify` function, we are dereferencing arr and assigning `90` to the first element of the array. This program outputs `[90 90 91]`
 
-**a[x] is shorthand for (*a)[x]. So (*arr)[0] in the above program can be replaced by arr[0]**. Lets rewrite the above program using this shorthand syntax.
+**a[x] is shorthand for (*a)[x]. So (*arr)[0] in the above program can be replaced by arr[0]**. Let's rewrite the above program using this shorthand syntax.
 
 ```go
 package main
@@ -283,9 +283,9 @@ func main() {
 
 This program also outputs `[90 90 91]`
 
-**Although this way of passing a pointer to an array as a argument to a function and making modification to it works, it is not the idiomatic way of achieving this in Go. We have [slices](https://golangbot.com/arrays-and-slices/) for this.**
+**Although this way of passing a pointer to an array as an argument to a function and making a modification to it works, it is not the idiomatic way of achieving this in Go. We have [slices](https://golangbot.com/arrays-and-slices/) for this.**
 
-Lets rewrite the same program using [slices](https://golangbot.com/arrays-and-slices/).
+Let's rewrite the same program using [slices](https://golangbot.com/arrays-and-slices/).
 
 ```go
 package main
@@ -308,7 +308,7 @@ func main() {
 
 [Run in playground](https://play.golang.org/p/rRvbvuI67W)
 
-In line no.13 of the program above, we pass a slice to the `modify` function. The first element of the slice is changed to `90` inside the `modify` function. This program also outputs `[90 90 91]`. **So forget about passing pointers to arrays around and use slices instead :)**. This code is much more clean and is idiomatic Go :).
+In line no.13 of the program above, we pass a slice to the `modify` function. The first element of the slice is changed to `90` inside the `modify` function. This program also outputs `[90 90 91]`. **So forget about passing pointers to arrays around and use slices instead :)**. This code is much cleaner and is idiomatic Go :).
 
 ### Go does not support pointer arithmetic
 

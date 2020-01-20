@@ -1,7 +1,7 @@
 
 # Object Oriented programming 
 
-Go doesn’t have inheritance – instead composition, embed­ding and inter­faces support code reuse and poly­morphism.
+Go doesn’t have an inheritance – instead composition, embed­ding and inter­faces support code reuse and poly­morphism.
 
 ![](https://yourbasic.org/golang/improvement.jpg)
 
@@ -11,7 +11,7 @@ Go doesn’t have inheritance – instead composition, embed­ding and inter­fa
 Inheritance in traditional object-oriented languages offers three features in one. When a `Dog`  inherits from an `Animal`
 
 1.  the  `Dog`  class reuses code from the  `Animal` class,
-2.  a variable  `x`  of type  `Animal`  can refer to either a  `Dog`  or an  `Animal`,a
+2.  a variable  `x`  of type  `Animal`  can refer to either a  `Dog`  or an  `Animal`, a
 3.  `x.Eat()`  will choose an  `Eat`  method based on what type of object  `x`  refers to.
 
 In object-oriented lingo, these features are known as  **code reuse**,  **poly­mor­phism**  and  **dynamic dispatch**.
@@ -19,9 +19,9 @@ In object-oriented lingo, these features are known as  **code reuse**,  **poly­
 All of these are available in Go, using separate constructs:
 
 -   **composition**  and  **embedding**  provide code reuse,
--   interfaces  take care of polymorphism and dynamic dispatch.
+-   interfaces take care of polymorphism and dynamic dispatch.
 
-## Code reuse by composition
+## Code reuse by the composition
 
 > Don't worry about type hierarchies when starting a new Go project –  
 > it's easy to introduce polymorphism and dynamic dispatch later on.
@@ -77,9 +77,9 @@ type Dog struct {
 
 ## Polymorphism and dynamic dispatch with interfaces
 
-> Keep your interfaces short, and introduce them only when needed.
+> Keep your interfaces short and introduce them only when needed.
 
-Further down the road your project might have grown to include more animals. At this point you can introduce polymorphism and dynamic dispatch using  **[interfaces](https://yourbasic.org/golang/interfaces-explained/)**.
+Further down the road, your project might have grown to include more animals. At this point, you can introduce polymorphism and dynamic dispatch using  **[interfaces](https://yourbasic.org/golang/interfaces-explained/)**.
 
 If you need to put all your pets to sleep, you can define a  `Sleeper`  interface.
 
@@ -118,7 +118,7 @@ type StopWatch struct {
 var clock StopWatch // Ready to use, no initialization needed.
 ```
 
--   `StopWatch`  takes advantage of the useful zero values of  `time.Time`,  `time.Duration`  and  `bool`.
+-   `StopWatch`  takes advantage of the useful zero values of  `time. Time`,  `time.Duration`  and  `bool`.
 -   In turn, users of  `StopWatch`  can benefit from  _its_  useful zero value.
 
 ## Factory

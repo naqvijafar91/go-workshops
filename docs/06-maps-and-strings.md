@@ -14,7 +14,7 @@ personSalary := make(map[string]int)
 ```
 The above line of code creates a map named  `personSalary`  which has  `string`  keys and  `int`  values.
 
-The zero value of a map is  `nil`. If you try to add items to nil map, a run time panic will occur. Hence the map has to be initialized using  `make`  function.
+The zero value of a map is  `nil`. If you try to add items to the nil map, a run-time panic will occur. Hence the map has to be initialized using  `make`  function.
 
 ```go
 package main
@@ -62,7 +62,7 @@ func main() {
 
 The above program outputs,  `personSalary map contents: map[steve:12000 jamie:15000 mike:9000]`
 
-It is also possible to initialize a map during declaration itself.
+It is also possible to initialize a map during the declaration itself.
 
 ```go
 package main
@@ -89,7 +89,7 @@ func main() {
 personSalary map contents: map[steve:12000 jamie:15000 mike:9000]  
 ```
 
-It's not necessary that only string types should be keys. All comparable types such as boolean, integer, float, complex, string, ... can also be keys. If you would like to know more about comparable types, please visit  [http://golang.org/ref/spec#Comparison_operators](http://golang.org/ref/spec#Comparison_operators)
+Only string types don't need to be keyed. All comparable types such as boolean, integer, float, complex, string, ... can also be keys. If you would like to know more about comparable types, please visit  [http://golang.org/ref/spec#Comparison_operators](http://golang.org/ref/spec#Comparison_operators)
   
 
 ### Finding if a key is present
@@ -170,7 +170,7 @@ personSalary[jamie] = 15000
 
 ### Deleting items
 
-_[delete(map, key)](https://golang.org/pkg/builtin/#delete)_  is the syntax to delete  `key`  from a  `map`. The delete function does no return any value.
+_[delete(map, key)](https://golang.org/pkg/builtin/#delete)_  is the syntax to delete  `key`  from a  `map`. The delete function does not return any value.
 
 ```go
 package main
@@ -203,7 +203,7 @@ map after deletion map[mike:9000 jamie:15000]
 
 ### Length of the map
 
-Length of the map can be determined using the  [len](https://golang.org/pkg/builtin/#len)  function.
+The length of the map can be determined using the  [len](https://golang.org/pkg/builtin/#len)  function.
 
 ```go
 package main
@@ -230,7 +230,7 @@ func main() {
 
 ### Maps are reference types
 
-Similar to  slices, maps are reference types. When a map is assigned to a new variable, they both point to the same internal data structure. Hence changes made in one will reflect in the other.
+Similar to slices, maps are reference types. When a map is assigned to a new variable, they both point to the same internal data structure. Hence changes made in one will reflect in the other.
 
 ```go
 package main
@@ -286,7 +286,7 @@ func main() {
 
 The above program will throw compilation error  **invalid operation: map1 == map2 (map can only be compared to nil)**.
 
-One way to check whether two maps are equal is to compare each one's individual elements one by one.
+One way to check whether two maps are equal is to compare each one's elements one by one.
 
 # Strings
 
@@ -389,11 +389,11 @@ H e l l o   W o r l d
 S e Ã ± o r  
 ```
 
-The reason is that the Unicode code point of  `ñ`  is  `U+00F1`  and its  [UTF-8 encoding](https://mothereff.in/utf-8#%C3%B1)  occupies 2 bytes. We are trying to print characters assuming that each code point will be one byte long which is wrong. 
+The reason is that the Unicode code point of  `ñ`  is  `U+00F1`  and it's [UTF-8 encoding](https://mothereff.in/utf-8#%C3%B1)  occupies 2 bytes. We are trying to print characters assuming that each code point will be one byte long which is wrong. 
 
 ### rune
 
-A rune is a builtin type in Go and it's the alias of int32. rune represents a Unicode code point in Go. It does not matter how many bytes the code point occupies, it can be represented by a rune. 
+A rune is a builtin type in Go and it's the alias of int32. the rune represents a Unicode code point in Go. It does not matter how many bytes the code point occupies, it can be represented by a rune. 
 
 ```go
 package main

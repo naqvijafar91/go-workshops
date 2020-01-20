@@ -44,7 +44,7 @@ new can be used to allocate values such as integers, &int is illegal:
     var i int
     &i
 
-In terms of channels there you can use make and new
+In terms of channels there, you can use make and new
 
     p := new(chan int)   // p has type: *chan int
     c := make(chan int)  // c has type: chan int
