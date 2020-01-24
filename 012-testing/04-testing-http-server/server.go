@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/naqvijafar91/go-workshops/310-testing-http-server/handler"
+	"go-workshops/012-testing/04-testing-http-server/handler"
 )
 
 func main() {

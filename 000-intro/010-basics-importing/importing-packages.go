@@ -5,7 +5,7 @@ import (
 
 	// if this code will be pushed to github everyone
 	// can import in that way:
-	"github.com/naqvijafar91/go-workshops/000-intro/010-basics-importing/sub"
+	"go-workshops/000-intro/010-basics-importing/sub"
 	// "./sub" will work too but it's not idiomatic in GO
 )
 

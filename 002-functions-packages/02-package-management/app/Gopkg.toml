@@ -27,7 +27,7 @@
 
 [[constraint]]
   branch = "master"
-  name = "github.com/naqvijafar91/go-workshops-package-1"
+  name = "go-workshops-package-1"
 
 [prune]
   go-tests = true

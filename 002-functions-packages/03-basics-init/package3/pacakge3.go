@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/naqvijafar91/go-workshops/002-functions-packages/03-basics-init/package1"
-	"github.com/naqvijafar91/go-workshops/002-functions-packages/03-basics-init/package2"
-	"github.com/naqvijafar91/go-workshops/002-functions-packages/03-basics-init/package4"
+	"go-workshops/002-functions-packages/03-basics-init/package1"
+	"go-workshops/002-functions-packages/03-basics-init/package2"
+	"go-workshops/002-functions-packages/03-basics-init/package4"
 )
 
 func init() {

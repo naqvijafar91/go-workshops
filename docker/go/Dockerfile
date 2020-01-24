@@ -2,10 +2,10 @@
 FROM golang:alpine AS build-env
 
 ENV BUILD_DIR=/go/src/
-RUN mkdir -p $BUILD_DIR/github.com/naqvijafar91/go-workshops/docker/go
-ADD . $BUILD_DIR/github.com/naqvijafar91/go-workshops/docker/go
+RUN mkdir -p $BUILD_DIR/go-workshops/docker/go
+ADD . $BUILD_DIR/go-workshops/docker/go
 
-WORKDIR $BUILD_DIR/github.com/naqvijafar91/go-workshops/docker/go
+WORKDIR $BUILD_DIR/go-workshops/docker/go
 RUN go build -o /go/app
 
 FROM alpine
