@@ -14,6 +14,11 @@ import (
 //sqllite is installed by default in Linux or else run in terminal
 //sudo apt-get install sqlite3 libsqlite3-dev
 //sqlite3
+//For Windows
+//Go to sqlite3 download page and download the sqlite-tools zip file
+//https://www.sqlite.org/2019/sqlite-tools-win32-x86-3300100.zip
+//Extract to C:/sqlite Once you extract the zip file, you will find sqlite3.exe file,
+//which is the command line shell we use to create and manage sqlite databases.
 
 func main() {
 	driverName := "sqlite3"

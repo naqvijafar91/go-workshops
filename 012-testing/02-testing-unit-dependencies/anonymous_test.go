@@ -6,7 +6,7 @@ import (
 
 func TestGetShoulCallCallFunction(t *testing.T) {
 	var callCount = 0
-	call = func(method int, url string) {
+	call = func(method int, url string) { // call var from anonymous.go is reassigned to this func
 		callCount++
 	}
 

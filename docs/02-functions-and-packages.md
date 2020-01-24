@@ -2,7 +2,7 @@
 
 ### What is a function?
 
-A function is a block of code that performs a specific task. A function takes a input, performs some calculations on the input and generates a output.
+A function is a block of code that performs a specific task. A function takes an input, performs some calculations on the input and generates an output.
 
 ### Function declaration
 
@@ -16,7 +16,7 @@ func functionname(parametername type) returntype {
 
 The function declaration starts with a  `func`  keyword followed by the  `functionname`. The parameters are specified between  `(`  and  `)`  followed by the  `returntype`  of the function. The syntax for specifying a parameter is parameter name followed by the type. Any number of parameters can be specified like  `(parameter1 type, parameter2 type)`. Then there is a block of code between  `{`  and  `}`  which is the body of the function.
 
-The parameters and return type are optional in a function. Hence the following syntax is also a valid function declaration.
+The parameters and return types are optional in a function. Hence the following syntax is also a valid function declaration.
 
 ```go
 func functionname() {  
@@ -26,7 +26,7 @@ func functionname() {
 
 ### Sample Function
 
-Lets write a function which takes the price of a single product and number of products as input parameters and calculates the total price by multiplying these two values and returns the output.
+Let's write a function which takes the price of a single product and number of products as input parameters and calculates the total price by multiplying these two values and returns the output.
 
 ```go
 func calculateBill(price int, no int) int {  
@@ -48,7 +48,7 @@ func calculateBill(price, no int) int {
 
 ```
 
-Now that we have a function ready, lets call it from somewhere in the code. The syntax for calling a function is  `functionname(parameters)`. The above function can be called using the code.
+Now that we have a function ready, let's call it from somewhere in the code. The syntax for calling a function is  `functionname(parameters)`. The above function can be called using the code.
 
 ```go
 calculateBill(10, 5)  
@@ -87,7 +87,7 @@ Total price is 540
 
 ### Multiple return values
 
-It is possible to return multiple values from a function. Lets write a function  `rectProps`  which takes the length and width of a rectangle and returns both the area and perimeter of the rectangle. The area of the rectangle is the product of length and width and the perimeter is twice the sum of the length and width.
+It is possible to return multiple values from a function. Let's write a function  `rectProps`  which takes the length and width of a rectangle and returns both the area and perimeter of the rectangle. The area of the rectangle is the product of length and width and the perimeter is twice the sum of the length and width.
 
 ```go
 package main
@@ -133,11 +133,11 @@ func rectProps(length, width float64)(area, perimeter float64) {
 
 ```
 
-**area**  and  **perimeter**  are the named return values in the above function. Note that the return statement in the function does not explicitly return any value. Since  `area`  and  `perimeter`  are specified in the function declaration as return values, they are automatically returned from the function when a return statement in encountered.
+**area**  and  **perimeter**  are the named return values in the above function. Note that the return statement in the function does not explicitly return any value. Since  `area`  and  `perimeter`  are specified in the function declaration as return values, they are automatically returned from the function when a return statement is encountered.
 
 ### Blank Identifier
 
-**_**  is know as the blank identifier in Go. It can be used in place of any value of any type. Lets see what's the use of this blank identifier.
+**_**  is known as the blank identifier in Go. It can be used in place of any value of any type. Let's see what's the use of this blank identifier.
 
 The  `rectProps`  function returns the area and perimeter of the rectangle. What if we only need the  `area`  and want to discard the  `perimeter`. This is where  `_`  is of use.
 
@@ -175,15 +175,15 @@ In line no. 13 we use only the area and the  `_`  identifier is used to discard 
 
 ### What are packages and why are they used?
 
-**Packages are used to organise go source code for better reusability and readability.**  Packages offer compartmentalisation of code and hence it becomes easy to maintain go applications.
+**Packages are used to organize go source code for better reusability and readability.**  Packages offer compartmentalization of code and hence it becomes easy to maintain go applications.
 
-We will step by step create an application which calculates the area and diagonal of a rectangle.
+We will step by step create an application that calculates the area and diagonal of a rectangle.
 
 ### main function and main package
 
-Every executable go application must contain a main function. This function is the entry point for execution. The main function should reside in the main package.
+Every executable go application must contain the main function. This function is the entry point for execution. The main function should reside in the main package.
 
-**The line of code to specify that a particular source file belongs to a package is  `package packagename`. This should be first line of every go source file.**
+**The line of code to specify that a particular source file belongs to a package is  `package package-name`. This should be the first line of every go source file.**
 
 
 ```go
@@ -198,14 +198,14 @@ func main() {
 
 ```
 
-The line of code  `package main`  specifies that this file belongs to the main package. The  `import "packagename"`  statement is used to import an existing package. In this case we import the  `fmt`  package which contains the Println method. Then there is a main function which prints  `Geometrical shape properties`
+The line of code  `package main`  specifies that this file belongs to the main package. The  `import "package-name"`  statement is used to import an existing package. In this case, we import the  `fmt`  package which contains the Println method. Then there is a main function which prints  `Geometrical shape properties`
 
 
-### Creating custom package
+### Creating a custom package
 
-We will structure the code in such a way that all functionalities related to a rectangle are in  `rectangle`  package.
+We will structure the code in such a way that all functionalities related to a rectangle are in the `rectangle`  package.
 
-**Source files belonging to a package should be placed in separate folders of their own. It is a convention in Go to name this folder with the same name of the package.**
+**Source files belonging to a package should be placed in separate folders of their own. It is a convention in Go to name this folder with the same name as the package.**
 
 ```go
 //rectprops.go
@@ -225,13 +225,13 @@ func Diagonal(len, wid float64) float64 {
 
 ```
 
-In the above code we have created two functions which calculate  `Area`  and  `Diagonal`. The area of the rectangle is the product of the length and width. The diagonal of the rectangle is the square root of the sum of squares of the length and width. The  `Sqrt`  function in the  `math`  package is used to calculate the square root.
+In the above code, we have created two functions that calculate  `Area`  and  `Diagonal`. The area of the rectangle is the product of the length and width. The diagonal of the rectangle is the square root of the sum of squares of the length and width. The  `Sqrt`  function in the  `math`  package is used to calculate the square root.
 
-_Note that the function names  **Area**  and  **Diagonal**  starts with caps. This is essential and we will explain shortly why this is needed._
+_Note that the function names  **Area**  and  **Diagonal** start with caps. This is essential and we will explain shortly why this is needed._
 
-### Importing custom package
+### Importing a custom package
 
-To use a custom package we must first import it.  `import path`  is the syntax to import a custom package. We must specify the path to the custom package with respect to the  `src`  folder inside the workspace. 
+To use a custom package we must first import it.  `import path`  is the syntax to import a custom package. We must specify the path to the custom package concerning the  `src`  folder inside the workspace. 
 
 The line  `import "geometry/rectangle"`  will import the rectangle package.
 
@@ -259,7 +259,7 @@ func main() {
 
 ```
 
-The above code imports the  `rectangle`  package and uses the  `Area`  and  `Diagonal`  function of it to find the area and diagonal of the rectangle. The  `%.2f`  format specifier in Printf is to truncate the floating point to two decimal places. The output of the application is
+The above code imports the  `rectangle`  package and uses the  `Area`  and  `Diagonal`  function of it to find the area and diagonal of the rectangle. The  `%.2f`  format specifier in Printf is to truncate the floating-point to two decimal places. The output of the application is
 
 ```
 Geometrical shape properties  
@@ -274,13 +274,13 @@ We capitalised the functions  `Area`  and  `Diagonal`  in the rectangle package.
 
  **Any variable or function which starts with a capital letter are exported names in go. Only exported functions and variables can be accessed from other packages.** 
 
-In this case we need to access  `Area`  and  `Diagonal`  functions from the main package. Hence they are capitalised.
+In this case, we need to access  `Area`  and  `Diagonal`  functions from the main package. Hence they are capitalized.
 
 If the function names are changed from  `Area(len, wid float64)`  to  `area(len, wid float64)`  in  `rectprops.go`  and from  `rectangle.Area(rectLen, rectWidth)`  to  `rectangle.area(rectLen, rectWidth)`  in  `geometry.go`  and if the program is run, the compiler will throw error  `geometry.go:11: cannot refer to unexported name rectangle.area`. Hence if you want to access a function outside of a package, it should be capitalised.
 
 ### init function
 
-Every package can contain a  `init`  function. The init function should not have any return type and should not have any parameters. The init function cannot be called explicitly in our source code. The init function looks like below
+Every package can contain an `init`  function. The init function should not have any return type and should not have any parameters. The init function cannot be called explicitly in our source code. The init function looks like below
 
 ```
 func init() {  
@@ -328,7 +328,7 @@ func Diagonal(len, wid float64) float64 {
 
 We have added a simple init function which just prints  `rectangle package initialised`
 
-### Use of blank identifier
+### Use of the blank identifier
 
 It is illegal in Go to import a package and not to use it anywhere in the code. The compiler will complain if you do so. The reason for this is to avoid bloating of unused packages which will significantly increase the compilation time. Replace the code in  `geometry.go`  with the following,
 
@@ -370,9 +370,9 @@ func main() {
 
 The line  `var _ = rectangle.Area`  silences the error. 
 
-**We should keep track of these kind of error silencers and remove them including the imported package at the end of application development if the package is not used. Hence it is recommended to write error silencers in the package level just after the import statement.**
+**We should keep track of these kinds of error silencers and remove them including the imported package at the end of application development if the package is not used. Hence it is recommended to write error silencers in the package level just after the import statement.**
 
-Sometimes we need to import a package just to make sure the initialisation takes place even though we do not need to use any function or variable from the package. For example, we might need to ensure that the init function of the rectangle package is called even though we do not use that package anywhere in our code. The _ blank identifier can be used in this case too as show below.
+Sometimes we need to import a package just to make sure the initialization takes place even though we do not need to use any function or variable from the package. For example, we might need to ensure that the init function of the rectangle package is called even though we do not use that package anywhere in our code. The _ blank identifier can be used in this case too as shown below.
 
 ```go
 package main 
@@ -402,7 +402,7 @@ Go supports anonymous functions, which can form closures. Anonymous functions ar
 
   
 
-Functions in Go are first class citizens so it can be:
+Functions in Go are first-class citizens so it can be:
 
 - passed as parameters
 

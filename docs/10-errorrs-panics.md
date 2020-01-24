@@ -1,5 +1,5 @@
 ## Errors
-In Go it’s idiomatic to communicate errors via an explicit,separate return value. This contrasts with the exceptions used in languages like Java and Ruby and the overloaded single result / error value sometimes used in C. Go’s approach makes it easy to see which functions return errors and to handle them using the same language constructs employed for any other, non-error tasks.
+In Go, it’s idiomatic to communicate errors via an explicit, separate return value. This contrasts with the exceptions used in languages like Java and Ruby and the overloaded single result/error value sometimes used in C. Go’s approach makes it easy to see which functions return errors and to handle them using the same language constructs employed for any other, non-error tasks.
 
 
 ## [Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)
@@ -73,7 +73,7 @@ func b() {
 ```
 3.  _Deferred functions may read and assign to the returning function's named return values._
 
-In this example, a deferred function increments the return value i  _after_  the surrounding function returns. Thus, this function returns 2:
+In this example, a deferred function increments the return value I _after_  the surrounding function returns. Thus, this function returns 2:
 ```
 func c() (i int) {
     defer func() { i++ }()

@@ -1,7 +1,7 @@
 
 # Structs and Interfaces
 
-Although it would be possible for us to write programs only using Go's built-in data types, at some point it would become quite tedious. Consider a program that interacts with shapes:
+Although it would be possible for us to write programs only using Go's built-in data types, at some point, it would become quite tedious. Consider a program that interacts with shapes:
 ```go
 package main
 
@@ -34,7 +34,7 @@ Keeping track of all the coordinates makes it difficult to see what the program 
 
 ## Structs
 
-An easy way to make this program better is to use a struct. A struct is a type which contains named fields. For example we could represent a Circle like this:
+An easy way to make this program better is to use a struct. A struct is a type that contains named fields. For example, we could represent a Circle-like this:
 ```go
 type Circle struct {
   x float64
@@ -60,7 +60,7 @@ Like with other data types, this will create a local Circle variable that is by 
 ```go
 c := new(Circle)
 ```
-This allocates memory for all the fields, sets each of them to their zero value and returns a pointer. (`*Circle`) More often we want to give each of the fields a value. We can do this in two ways. Like this:
+This allocates memory for all the fields, sets each of them to their zero value and returns a pointer. (`*Circle`) More often we want to give each of the value of the field. We can do this in two ways. Like this:
 ```go
 c := Circle{x: 0, y: 0, r: 5}
 ```
@@ -87,7 +87,7 @@ In main we have:
 c := Circle{0, 0, 5}
 fmt.Println(circleArea(c))
 ```
-One thing to remember is that arguments are always copied in Go. If we attempted to modify one of the fields inside of the  `circleArea`  function, it would not modify the original variable. Because of this we would typically write the function like this:
+One thing to remember is that arguments are always copied in Go. If we attempted to modify one of the fields inside of the  `circleArea`  function, it would not modify the original variable. Because of this, we would typically write the function like this:
 ```go
 func circleArea(c *Circle) float64 {
   return math.Pi * c.r*c.r
@@ -175,9 +175,9 @@ type Shape interface {
   area() float64
 }
 ```
-Like a struct an interface is created using the  `type`  keyword, followed by a name and the keyword  `interface`. But instead of defining fields, we define a “method set”. A method set is a list of methods that a type must have in order to “implement” the interface.
+Like a struct, an interface is created using the  `type`  keyword, followed by a name and the keyword  `interface`. But instead of defining fields, we define a “method set”. A method set is a list of methods that a type must have to “implement” the interface.
 
-In our case both  `Rectangle`  and  `Circle`  have area methods which return  `float64`s so both types implement the  `Shape`  interface. By itself this wouldn't be particularly useful, but we can use interface types as arguments to functions:
+In our case, both  `Rectangle`  and  `Circle`  have area methods that return  `float64`s so both types implement the  `Shape`  interface. By itself, this wouldn't be particularly useful, but we can use interface types as arguments to functions:
 ```go
 func totalArea(shapes ...Shape) float64 {
   var area float64
