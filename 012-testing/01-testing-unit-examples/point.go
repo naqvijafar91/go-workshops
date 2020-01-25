@@ -25,4 +25,4 @@ func (point *Point) Move(to Point) {
 // show godoc for this package
 // locally with godoc on port 7777
 // przez `godoc -http=":7799" -goroot=$GOPATH/ &`
-// http://localhost:7799/pkg/github.com/naqvijafar91/go-workshops/302-testing-unit-examples/
+// http://localhost:7799/pkg/go-workshops/302-testing-unit-examples/

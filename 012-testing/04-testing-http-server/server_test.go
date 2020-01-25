@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/naqvijafar91/go-workshops/310-testing-http-server/handler"
+	"go-workshops/012-testing/04-testing-http-server/handler"
 
 	"io/ioutil"
 	"log"

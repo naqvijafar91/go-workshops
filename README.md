@@ -129,9 +129,9 @@ To install docker compose please follow [Docker compose installation guide](http
 "go get" command is the standard way of downloading and installing packages and related dependencies. "go get" command clones a git repo to your local machine at *$GOPATH/src/github.com/*
 
 ```
-go get github.com/naqvijafar91/go-workshops
+go get go-workshops
 
-cd \$GOPATH/src/github.com/naqvijafar91/go-workshops
+cd \$GOPATH/src/go-workshops
 ```
 
 ## Go Tools
@@ -202,7 +202,7 @@ Environment variable `$GOPATH` is responsible for path to the root dir of `src`,
 
 `package` in go is in form of files with directive `package package_name` on top of each file. Package by default is imported as full path to package.
 ```go
-import "github.com/naqvijafar91/go-workshops/010-basics-importing/sub"
+import "go-workshops/010-basics-importing/sub"
 ```
 ## Getting and installing external packages
 

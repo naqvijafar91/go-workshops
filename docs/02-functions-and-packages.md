@@ -169,7 +169,7 @@ In line no. 13 we use only the area and the  `_`  identifier is used to discard 
   
   
 
-([code for: Basics Functions](https://github.com/naqvijafar91/go-workshops/tree/master/040-basics-functions))
+([code for: Basics Functions](https://go-workshops/tree/master/040-basics-functions))
 
 ## Packages 
 
@@ -390,7 +390,7 @@ func main() {
 
   
 
-([code for: Basics Init](https://github.com/naqvijafar91/go-workshops/tree/master/041-basics-init))
+([code for: Basics Init](https://go-workshops/tree/master/041-basics-init))
 
   
 
@@ -412,6 +412,4 @@ Functions in Go are first-class citizens so it can be:
 
 - called anonymously
 
-   
 
-([code for: Basics Closures](https://github.com/naqvijafar91/go-workshops/tree/master/042-basics-closures))

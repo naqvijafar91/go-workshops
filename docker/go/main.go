@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/naqvijafar91/go-workshops/docker/go/image"
+	"go-workshops/docker/go/image"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {

@@ -23,7 +23,7 @@ Environment variable `$GOPATH` is responsible for the path to the root dir of `s
 
 `package` in go is in the form of files with directive `package package_name` on top of each file. Package by default is imported as the full path to the package.
 
-    import "github.com/naqvijafar91/go-workshops/010-basics-importing/sub"
+    import "go-workshops/010-basics-importing/sub"
 
 ## Getting and installing external packages
 
